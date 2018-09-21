@@ -216,7 +216,6 @@ def Search():
         }
 
         def Download():
-            while
             DownloadingList.append(Vid["title"] + " (" + Vid["id"] + ")")
 
             with youtube_dl.YoutubeDL(ydl_opts) as ydl:
