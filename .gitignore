@@ -102,3 +102,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# User
+
+YouTubeSimpleClient/ffmpeg/*
+YouTubeSimpleClient/Music/*
+YouTubeSimpleClient/prefs.json
