@@ -101,7 +101,7 @@ class Player:
         self.playthread.daemon = True
         self.playthread.start()
 
-devkey = "AIzaSyC42sYTD0Enrafr13Simeom5YsGzsB0ekQ"
+devkey = "token"
 
 def resource_path(relative_path):
     base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
