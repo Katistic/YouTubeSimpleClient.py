@@ -12,6 +12,7 @@ import pydub
 import time
 import soundcard as sc
 import os
+import pythoncom
 
 sys.stderr = t
 
@@ -63,6 +64,8 @@ class Player:
                 'outtmpl': id+".mp4",
                 'quiet': True,
                 'no_warnings': True,
+                "nocheckcertificate": True,
+                'noplaylist': True,
                 'postprocessors': [{
                     'key': 'FFmpegExtractAudio',
                     'preferredcodec': 'mp3'
@@ -77,6 +80,8 @@ class Player:
     def play(self):
         def play():
             a = 1
+            pythoncom.CoInitialize()
+
             while a == 1:
                 if len(self.q) > 0:
                     f = self.q.pop(0)
@@ -96,6 +101,7 @@ class Player:
         self.playthread.daemon = True
         self.playthread.start()
 
+devkey = "AIzaSyC42sYTD0Enrafr13Simeom5YsGzsB0ekQ"
 
 def resource_path(relative_path):
     base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
